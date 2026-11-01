@@ -3,3 +3,5 @@ dist/
 .pnpm-store/
 .DS_Store
 作品集-跨设备交接.zip
+
+.wrangler/
