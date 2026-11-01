@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 210" fill="none">
+  <rect width="210" height="210" fill="#F5F5F2"/>
+  <g fill="#10130D">
+    <path d="M10 10h58v58H10zM18 18v42h42V18H18zm10 10h22v22H28z" fill-rule="evenodd"/>
+    <path d="M142 10h58v58h-58zm8 8v42h42V18h-42zm10 10h22v22h-22z" fill-rule="evenodd"/>
+    <path d="M10 142h58v58H10zm8 8v42h42v-42H18zm10 10h22v22H28z" fill-rule="evenodd"/>
+    <path d="M78 10h10v10H78zM98 10h10v20H98zM118 10h10v10h-10zM78 30h10v10H78zM88 40h20v10H88zM118 30h10v20h-10zM78 58h20v10H78zM108 58h10v10h-10zM128 58h10v10h-10zM78 78h10v20H78zM98 78h10v10H98zM118 78h20v10h-20zM148 78h10v20h-10zM178 78h20v10h-20zM88 98h10v10H88zM108 98h20v10h-20zM138 98h10v20h-10zM158 98h10v10h-10zM188 98h10v20h-10zM78 118h20v10H78zM108 118h10v20h-10zM128 128h10v10h-10zM158 118h20v10h-20zM188 128h10v10h-10zM78 138h10v20H78zM98 148h20v10H98zM128 148h10v10h-10zM148 138h10v20h-10zM178 148h20v10h-20zM78 168h20v10H78zM108 168h10v20h-10zM128 178h20v10h-20zM158 168h10v10h-10zM188 178h10v20h-10zM98 188h10v10H98zM148 188h10v10h-10zM168 188h10v10h-10z"/>
+  </g>
+  <rect x="81" y="81" width="48" height="48" rx="9" fill="#F5F5F2"/>
+  <path d="M91 95c0-5 4-9 10-9h13c6 0 10 4 10 9s-4 9-10 9h-3l-7 6v-6h-3c-6 0-10-4-10-9Z" fill="#597B20"/>
+  <circle cx="101" cy="95" r="1.7" fill="#F5F5F2"/><circle cx="108" cy="95" r="1.7" fill="#F5F5F2"/><circle cx="115" cy="95" r="1.7" fill="#F5F5F2"/>
+</svg>
