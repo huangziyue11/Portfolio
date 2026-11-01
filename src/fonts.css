@@ -1,0 +1,36 @@
+/* Self-hosted Google Fonts, subset to the portfolio text. See public/fonts/licenses. */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(./assets/fonts/archivo-0.woff2) format('woff2');
+  unicode-range: U+20-7e, U+a9, U+b7, U+2013-2014, U+2190-2193, U+2197, U+2726;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./assets/fonts/dm-mono-0.woff2) format('woff2');
+  unicode-range: U+20-7e, U+a9, U+b7, U+2013-2014, U+2190-2193, U+2197, U+2726;
+}
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./assets/fonts/dm-mono-1.woff2) format('woff2');
+  unicode-range: U+20-7e, U+a9, U+b7, U+2013-2014, U+2190-2193, U+2197, U+2726;
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url(./assets/fonts/noto-sans-sc-0.woff2) format('woff2');
+  unicode-range: U+20-7e, U+a9, U+b7, U+2013-2014, U+2190-2193, U+2197, U+2726, U+3000-3002, U+4e00, U+4e09-4e0b, U+4e0d-4e0e, U+4e13-4e14, U+4e1a, U+4e1c, U+4e2d, U+4e3a-4e3b, U+4e4b, U+4e50, U+4e58, U+4e8c, U+4e8e, U+4e92, U+4ea4, U+4ea7, U+4eac, U+4ece, U+4ed8, U+4ee3, U+4ee5, U+4ef6, U+4efd, U+4f18, U+4f1a, U+4f34, U+4f4d, U+4f53, U+4f5c, U+4f60, U+4f7f, U+4fdd, U+4fe1, U+50cf, U+5165, U+5168, U+5173, U+5177, U+5185, U+5199, U+51fa, U+5207, U+5219, U+5230, U+5236, U+524d, U+529b, U+529f, U+52a1, U+52a8-52a9, U+5316, U+5347, U+534f, U+5355, U+5357, U+5360, U+5386, U+539f, U+53c2, U+53cd, U+53d1, U+53d7, U+53ef, U+5408, U+540c-540e, U+5411, U+542c, U+5448, U+5458, U+548c, U+54c1, U+54cd, U+56de, U+56e2, U+56f4, U+56fe, U+5728, U+5730, U+573a, U+5757, U+578b, U+57df, U+5883, U+58eb, U+58f0, U+5907, U+590d, U+591a, U+5927, U+594f, U+597d, U+59cb, U+5a31, U+5b50, U+5b57, U+5b66, U+5b8c, U+5b9a, U+5b9e, U+5ba4, U+5bb9, U+5bfc, U+5c0f, U+5c42, U+5c4f, U+5c5e, U+5de1, U+5de5, U+5e08, U+5e38, U+5e55, U+5e74, U+5e76, U+5e8f, U+5ea6-5ea7, U+5efa, U+5f00, U+5f0f, U+5f53, U+5f62, U+5fae, U+5fc3, U+5feb, U+6001, U+6027, U+606f, U+6089, U+60a6, U+60a8, U+60c5, U+611f, U+620f-6211, U+6237, U+624b, U+6253, U+6267, U+6280, U+628a, U+62c6, U+62e5, U+6301, U+6362, U+636e, U+6392, U+63a2, U+63a7-63a8, U+63d0, U+64c5, U+6539, U+6548, U+6559, U+6570, U+6574, U+6587, U+6599, U+65b9, U+65c5, U+65e2, U+65e5, U+65f6, U+6613, U+662f, U+663e, U+666f-6670, U+667a, U+66f4, U+6709, U+670d, U+671f, U+672c, U+673a, U+6742, U+6750, U+677e, U+6781, U+6784, U+6797, U+67b6, U+67e5, U+6821, U+6838-6839, U+6846, U+6848, U+68b3, U+68c0, U+6982, U+6a21, U+6b22, U+6c1b, U+6c2a, U+6c42, U+6c7d, U+6c89, U+6cbf, U+6ce8, U+6d3b, U+6d41, U+6d4b, U+6d4f, U+6d78, U+6e05, U+6e29, U+6e38, U+706f, U+70b9, U+7126, U+7136, U+719f, U+7247-7248, U+7279, U+72b6, U+73af-73b0, U+7406, U+751f, U+7528, U+754c, U+7684, U+76d6, U+76ee, U+76f4, U+770b, U+771f, U+7801, U+7814, U+7834, U+7855, U+78e8, U+793a, U+79cd, U+79d1, U+79fb, U+7a0b, U+7a76, U+7a7a, U+7a81, U+7b49, U+7ba1, U+7cfb, U+7d22, U+7ea7, U+7ec4, U+7ec6, U+7ecf, U+7ed5, U+7edf, U+7eed, U+7ef4, U+7f51, U+7ffb, U+8046, U+804c, U+8054, U+805a, U+8096, U+80b2, U+80cc, U+80fd, U+81ea, U+81f4, U+822a, U+8231, U+8282, U+8303, U+83dc, U+843d, U+878d, U+884c, U+8868, U+8986, U+89c2, U+89c4, U+89c6, U+89c8-89c9, U+89e3, U+8a00, U+8ba1, U+8ba9, U+8bbe, U+8bd1, U+8bd5, U+8be6, U+8bed, U+8bf7, U+8bfb, U+8c03, U+8d1f, U+8d23, U+8d28, U+8d2f, U+8dc3, U+8de8, U+8def, U+8eab, U+8f66, U+8f7b, U+8f7d, U+8fb9, U+8fbe, U+8fc1, U+8fc7, U+8fce, U+8fd4, U+8fdb, U+8fde, U+8fed, U+9002, U+901a, U+901f, U+9080, U+914d, U+91cd, U+91cf, U+94fe, U+952e, U+957f, U+95ed, U+95f4, U+961f, U+9662, U+968f, U+96c6, U+9700, U+9762, U+97f3, U+9875, U+9879, U+9884, U+9886, U+9891, U+9988, U+9996, U+9a71, U+9a76, U+9a7e, U+9a8c, U+9ad8, U+9ec4, U+ff0c, U+ff5c;
+}

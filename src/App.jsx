@@ -1,7 +1,18 @@
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import GrainientBackground from './GrainientBackground.jsx';
-import PortfolioMotion from './PortfolioMotion.jsx';
 import StarCursor from './StarCursor.jsx';
+const PortfolioMotion = lazy(() => import('./PortfolioMotion.jsx'));
+
+function DeferredMotion() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    if (matchMedia('(prefers-reduced-motion: reduce), (max-width: 700px)').matches) return;
+    const start = () => setReady(true);
+    const id = window.requestIdleCallback ? window.requestIdleCallback(start, { timeout: 1500 }) : setTimeout(start, 300);
+    return () => window.requestIdleCallback ? window.cancelIdleCallback(id) : clearTimeout(id);
+  }, []);
+  return ready ? <Suspense fallback={null}><PortfolioMotion /></Suspense> : null;
+}
 
 const projects = [
   {
@@ -217,7 +228,25 @@ function SiteHeader() {
 
 function Showreel() {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+  const [manualPlayback] = useState(() => navigator.connection?.saveData || ['slow-2g', '2g'].includes(navigator.connection?.effectiveType) || matchMedia('(prefers-reduced-motion: reduce)').matches);
+  useEffect(() => {
+    if (manualPlayback) return;
+    let id;
+    const start = () => {
+      id = window.requestIdleCallback ? window.requestIdleCallback(() => setVideoReady(true), { timeout: 1500 }) : setTimeout(() => setVideoReady(true), 300);
+    };
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start, { once: true });
+    return () => {
+      window.removeEventListener('load', start);
+      if (id !== undefined) window.requestIdleCallback ? window.cancelIdleCallback(id) : clearTimeout(id);
+    };
+  }, [manualPlayback]);
+  useEffect(() => {
+    if (videoReady) { videoRef.current?.load(); videoRef.current?.play().catch(() => setIsPlaying(false)); }
+  }, [videoReady]);
   const [translationPosition, setTranslationPosition] = useState({ x: 20, y: 20 });
   const [showTranslation, setShowTranslation] = useState(false);
   const updateTranslationPosition = (event) => {
@@ -236,6 +265,7 @@ function Showreel() {
   const togglePlayback = () => {
     const video = videoRef.current;
     if (!video) return;
+    if (!videoReady) { setVideoReady(true); return; }
     if (video.paused) video.play().catch(() => setIsPlaying(false));
     else video.pause();
   };
@@ -243,8 +273,8 @@ function Showreel() {
   return (
     <section className="showreel" id="showreel">
       <div className={`showreel-frame ${isPlaying ? 'is-playing' : 'is-paused'}`}>
-        <video ref={videoRef} className="showreel-video" autoPlay muted loop playsInline preload="metadata" onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} onClick={togglePlayback} aria-label="智能座舱设计作品集视频">
-          <source src={import.meta.env.BASE_URL + 'showreel-3233-720p-web.mp4'} type="video/mp4" />
+        <video ref={videoRef} className="showreel-video" autoPlay={videoReady} data-manual-playback={manualPlayback ? "true" : undefined} poster={import.meta.env.BASE_URL + 'showreel-poster.webp'} muted loop playsInline preload="none" tabIndex={0} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); togglePlayback(); } }} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} onClick={togglePlayback} aria-label="智能座舱设计作品集视频">
+          {videoReady && <><source media="(max-width: 700px)" src={import.meta.env.BASE_URL + 'showreel-mobile.mp4'} type="video/mp4" /><source src={import.meta.env.BASE_URL + 'showreel-desktop.mp4'} type="video/mp4" /></>}
         </video>
         <div className="showreel-shade"></div>
       </div>
@@ -529,7 +559,7 @@ export default function App() {
     const videos = new Set();
     const inView = new Set();
     const update = () => videos.forEach(video => {
-      if (inView.has(video) && !document.hidden) video.play().catch(() => {});
+      if (inView.has(video) && !document.hidden) { if (video.dataset.manualPlayback !== "true") video.play().catch(() => {}); }
       else video.pause();
     });
     const observer = new IntersectionObserver(entries => {
@@ -559,7 +589,7 @@ export default function App() {
     <>
       {!currentProject && <GrainientBackground />}
       <StarCursor />
-      {!currentProject && <PortfolioMotion />}
+      {!currentProject && <DeferredMotion />}
       {currentProject ? <ProjectDetail project={currentProject} /> : <div className="site-content">
         <SiteHeader />
         <main><Showreel /><ProjectBrowser /><About /><Experience /><Contact /></main>

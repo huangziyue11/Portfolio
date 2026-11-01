@@ -73,52 +73,8 @@ export default function PortfolioMotion() {
     if (!root) return undefined;
 
     const context = gsap.context(() => {
-      const header = gsap.timeline({ defaults: { ease } });
-      header.fromTo('.site-header .brand', { autoAlpha: 0, y: -16 }, { autoAlpha: 1, y: 0, duration: 0.8 }, 0.35)
-        .fromTo('.site-header nav a', { autoAlpha: 0, y: -12 }, { autoAlpha: 1, y: 0, duration: 0.65, stagger: 0.075 }, 0.52)
-        .fromTo('.availability', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.75 }, 0.8);
-
-      const hero = gsap.timeline({ defaults: { ease } });
-      hero.fromTo('.showreel-frame > video', {
-          clipPath: 'inset(0 100% 0 0)',
-          scale: 1,
-        }, {
-          clipPath: 'inset(0 0% 0 0)',
-          scale: 1,
-          duration: 1.8,
-          ease: 'power3.inOut',
-        }, 0.2)
-        .fromTo('.showreel-title > span', {
-          autoAlpha: 0,
-          y: 25,
-        }, {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-        }, 0.86)
-        .fromTo('.hero-line-inner', {
-          yPercent: 125,
-          scaleX: 0.72,
-          autoAlpha: 0.55,
-          transformOrigin: 'left center',
-        }, {
-          yPercent: 0,
-          scaleX: 1,
-          autoAlpha: 1,
-          duration: 1.35,
-          stagger: 0.16,
-          ease: 'expo.out',
-          clearProps: 'transform,opacity,visibility',
-        }, 0.92)
-        .fromTo('.showreel-title p, .play-button, .frame-index', {
-          autoAlpha: 0,
-          y: 22,
-        }, {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.9,
-          stagger: 0.1,
-        }, 1.5);
+      // Keep the headline and poster visible immediately; enhance only decorations.
+      gsap.fromTo('.hero-stars', { scale: 0.94 }, { scale: 1, duration: 0.8, ease });
 
       const work = root.querySelector('#work');
       addSectionSequence(

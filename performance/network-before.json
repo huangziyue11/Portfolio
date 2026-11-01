@@ -1,0 +1,103 @@
+{
+  "html": [
+    {
+      "http_code": 200,
+      "time_connect": 0.000291,
+      "time_starttransfer": 0.177521,
+      "time_total": 0.177776,
+      "size_download": 563
+    },
+    {
+      "http_code": 200,
+      "time_connect": 0.000621,
+      "time_starttransfer": 0.299632,
+      "time_total": 0.299872,
+      "size_download": 563
+    },
+    {
+      "http_code": 200,
+      "time_connect": 0.000594,
+      "time_starttransfer": 0.215723,
+      "time_total": 0.215985,
+      "size_download": 563
+    }
+  ],
+  "js": [
+    {
+      "http_code": 200,
+      "time_connect": 0.000645,
+      "time_starttransfer": 0.315303,
+      "time_total": 0.338981,
+      "size_download": 122410
+    },
+    {
+      "http_code": 200,
+      "time_connect": 0.00035,
+      "time_starttransfer": 0.356896,
+      "time_total": 0.362554,
+      "size_download": 122410
+    },
+    {
+      "http_code": 200,
+      "time_connect": 0.000384,
+      "time_starttransfer": 0.241003,
+      "time_total": 0.258995,
+      "size_download": 122410
+    }
+  ],
+  "css": [
+    {
+      "http_code": 200,
+      "time_connect": 0.000288,
+      "time_starttransfer": 0.340151,
+      "time_total": 0.340704,
+      "size_download": 15821
+    },
+    {
+      "http_code": 200,
+      "time_connect": 0.000349,
+      "time_starttransfer": 0.211193,
+      "time_total": 0.217121,
+      "size_download": 15821
+    },
+    {
+      "http_code": 200,
+      "time_connect": 0.000351,
+      "time_starttransfer": 0.348313,
+      "time_total": 0.351118,
+      "size_download": 15821
+    }
+  ],
+  "video": [
+    {
+      "http_code": 200,
+      "time_connect": 0.000477,
+      "time_starttransfer": 0.345379,
+      "time_total": 5.228295,
+      "size_download": 23246456
+    }
+  ],
+  "fonts": [
+    {
+      "http_code": 200,
+      "time_connect": 0.000337,
+      "time_starttransfer": 0.30564,
+      "time_total": 0.305848,
+      "size_download": 440
+    },
+    {
+      "http_code": 200,
+      "time_connect": 0.000409,
+      "time_starttransfer": 0.182447,
+      "time_total": 0.182806,
+      "size_download": 440
+    },
+    {
+      "http_code": 200,
+      "time_connect": 0.000581,
+      "time_starttransfer": 0.304631,
+      "time_total": 0.304974,
+      "size_download": 440
+    }
+  ]
+}

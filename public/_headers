@@ -1,0 +1,11 @@
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/showreel-poster.webp
+  Cache-Control: public, max-age=86400
+
+/showreel-desktop.mp4
+  Cache-Control: public, max-age=86400
+
+/showreel-mobile.mp4
+  Cache-Control: public, max-age=86400
